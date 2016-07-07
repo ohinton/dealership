@@ -1,4 +1,4 @@
-<h1>Add a vehicle to <%= @dealership.name() %> </h1>
+<h3>Add a vehicle to <%= @dealership.name() %> </h3>
 
 <form action="/vehicles" method="post">
   <input id='dealership_id' name='dealership_id' type='hidden' value='<%= @dealership.id() %>'>
@@ -14,3 +14,6 @@
 
   <button type="submit">Add Vehicle</button>
 </form>
+
+<br>
+<a href="/dealerships/<%= @dealership.id() %>">Back</a>

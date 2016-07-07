@@ -42,6 +42,4 @@ class Vehicle
     american_cars.include?(@make).&(self.age().<=(15))
   end
 
-
-
 end
