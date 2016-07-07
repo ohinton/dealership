@@ -1,6 +1,6 @@
 class Vehicle
   @@vehicles = []
-  attr_reader(:make, :model, :year)
+  attr_reader(:make, :model, :year, :id)
 
   define_method(:initialize) do |attributes|
     @make = attributes.fetch(:make)
@@ -21,6 +21,17 @@ class Vehicle
     @@vehicles = []
   end
 
+  define_singleton_method(:find) do |id|
+    found_vehicle = nil
+    @@vehicles.each() do |vehicle|
+      puts vehicle
+      if vehicle.id().eql?(id)
+        found_vehicle = vehicle
+      end
+    end
+    found_vehicle
+  end
+
   define_method(:age) do
     current_year = Time.new().year()
     current_year.-(@year)
@@ -31,8 +42,6 @@ class Vehicle
     american_cars.include?(@make).&(self.age().<=(15))
   end
 
-  define_method(:id) do
-    @id
-  end
+
 
 end

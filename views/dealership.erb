@@ -3,6 +3,8 @@
 <p>Here are the cars at this dealership:</p>
 <% @dealership.cars().each do |car| %>
   <ul>
-    <li><%= @make %>, <%= @model %>, <%= @year %> </li>
+    <li><a href = "/vehicles/<%= car.id %>"><%= car.make %>, <%= car.model %>, <%= car.year %> </a> </li>
   </ul>
 <% end %>
+
+<a href="/dealerships/<%= @dealership.id() %>/vehicles/new">Add a vehicle to this dealership</a>

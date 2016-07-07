@@ -72,4 +72,12 @@ describe(".all") do
       end
     end
 
+    describe(".find") do
+      it("returns a vehicle by its id number") do
+        test_vehicle = Vehicle.new({:make=> "Toyota", :model => "Prius", :year => 2000, :color => "blue", :engine_size => "4L", :number_of_doors => "4"})
+        test_vehicle.save()
+        expect(Vehicle.find(test_vehicle.id())).to(eq(test_vehicle))
+      end
+    end
+
 end
