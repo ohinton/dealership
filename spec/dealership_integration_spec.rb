@@ -26,5 +26,8 @@ describe('the add dealerships path', {:type => :feature}) do
   it('displays form to add a dealership') do
     visit('/dealerships/new')
     expect(page).to have_content("Add dealerships")
+    fill_in('name', :with => "Olivia's Autos")
+    click_button('Add Dealership')
+    expect(page).to have_content("Dealership added!")
   end
 end

@@ -1,1 +1,12 @@
 <h1>Here's a list of all our dealerships!</h1>
+  <% if @dealerships.length > 0 %>
+    <ul>
+      <% @dealerships.each() do |dealership| %>
+        <li><a href = '/dealerships/<%= dealership.id() %>'> <%= dealership.name() %></a></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>
+      There are no dealerships currently
+    </p>
+  <%end%>

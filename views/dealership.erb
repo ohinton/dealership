@@ -1,0 +1,8 @@
+<h1>Welcome to <%= @dealership.name() %>!</h1>
+
+<p>Here are the cars at this dealership:</p>
+<% @dealership.cars().each do |car| %>
+  <ul>
+    <li><%= @make %>, <%= @model %>, <%= @year %> </li>
+  </ul>
+<% end %>

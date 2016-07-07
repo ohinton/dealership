@@ -8,10 +8,6 @@ class Dealership
     @cars = []
   end
 
-  # def id
-  #   @id
-  # end
-
   def save
     @@dealerships.push(self)
   end
